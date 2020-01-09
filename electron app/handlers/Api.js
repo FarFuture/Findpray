@@ -1,6 +1,10 @@
 var request = new XMLHttpRequest()
 
+
+var city = document.getElementById("city").value;
 // Open a new connection, using the GET request on the URL endpoint
+var params = JSON.stringify({ city: });
+
 request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
 
 request.onload = function() {
