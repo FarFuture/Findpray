@@ -2,7 +2,7 @@
 
 	"name": "Findpray",
 
-	"version": "0.0.5",
+	"version": "0.6.5",
 
 	"description": "A Simple App That Finds Prayer Times For Your Area",
 
@@ -16,14 +16,14 @@
 	},
 
 	"build": {
-  		"appId": "com.pfs.testele",
+  		"appId": "com.pfs.findpray",
   	  "mac": {
     	   "category": "tool"
   	  }
 	},
 	"repository": {
     "type": "git",
-    "url": "none"
+    "url": "https://github.com/circutrider21/Findpray"
 	},
 
 	"author": "Peeled Fruit Studios",
