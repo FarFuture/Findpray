@@ -1,0 +1,35 @@
+{
+
+	"name": "Findpray",
+
+	"version": "0.0.5",
+
+	"description": "A Simple App That Finds Prayer Times For Your Area",
+
+	"main": "app.js",
+
+	"scripts": {
+
+		"start": "electron .",
+    "cert": "electron-builder create-self-signed-cert",
+  	"dist": "electron-builder build -w"
+	},
+
+	"build": {
+  		"appId": "com.pfs.testele",
+  	  "mac": {
+    	   "category": "tool"
+  	  }
+	},
+	"repository": {
+    "type": "git",
+    "url": "none"
+	},
+
+	"author": "Peeled Fruit Studios",
+
+	"license": "MIT",
+
+	"dependencies": {
+  }
+}
