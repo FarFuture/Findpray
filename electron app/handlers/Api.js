@@ -1,4 +1,5 @@
-let fs = require('fs')
+const fs = require('fs')
+const BrowserWindow = require('electron')
 var request = new XMLHttpRequest()
 
 
@@ -15,7 +16,7 @@ if(fs.existsSync(filename)) {
     var info = JSON.parse(data)
     city = info.city
     state = info.state
-    country = info.country 
+    country = info.country
 })
 } else {
   var fals = JSON.stringify({
