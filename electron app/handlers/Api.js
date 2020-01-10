@@ -2,25 +2,33 @@ let fs = require('fs')
 var request = new XMLHttpRequest()
 
 
-var city = document.getElementById("city").value;
-var state = document.getElementById("state").value;
-var country = document.getElementById("country").value;
+var city = $('#city').val()
+var state = $('#state').val()
+var country = $('#country').val()
 
 if(fs.existsSync(filename)) {
-      let data = fs.readFileSync(filename, 'utf8').split('\n')
+  fs.readFile('Input.txt', 'utf-8', (err, data) => {
+    if (err) throw err;
 
-      data.forEach((contact, index) => {
-         let [ name, email ] = contact.split(',')
-         addEntry(name, email)
-      })
+    // Converting Raw Buffer to text
+    // data using tostring function.
+    var info = JSON.parse(data)
+    city = info.city
+    state = info.state
+    country = info.country 
+})
+} else {
+  var fals = JSON.stringify({
+    city: city,
+    state: state,
+    country:country
+  })
+  fs.writeFile(filename, fals, (err) => {
 
-   } else {
-      console.log("File Doesn\'t Exist. Creating new file.")
-      fs.writeFile(filename, '', (err) => {
-         if(err)
-            console.log(err)
-      }
-  }
+        // In case of a error throw err.
+      if (err) throw err;
+  })
+}
 // Open a new connection, using the GET request on the URL endpoint
 var params = JSON.stringify({
   city: city,
