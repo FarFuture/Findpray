@@ -1,6 +1,6 @@
 {
 	"name": "Findpray",
-	"version": "0.6.5",
+	"version": "0.7.5",
 	"description": "A Simple App That Finds Prayer Times For Your Area",
 	"main": "app.js",
 	"scripts": {
