@@ -20,7 +20,9 @@
 	},
 	"author": "Peeled Fruit Studios",
 	"license": "MIT",
-	"dependencies": {},
+	"dependencies": {
+		"jquery": "^3.4.1"
+	},
 	"devDependencies": {
 		"electron": "^7.1.8"
 	}

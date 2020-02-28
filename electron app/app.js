@@ -15,7 +15,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('views/tabo.html')
+  win.loadFile('views/basic.html')
 
   // Open the DevTools.
   win.webContents.openDevTools()
