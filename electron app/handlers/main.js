@@ -1,4 +1,3 @@
-const $ = require("jquery");
 $("#submit").click(function(){
   var city = $("#city").text();
   var country = $("#country").text();
@@ -18,3 +17,13 @@ $("#submit").click(function(){
     
   });
 });
+
+function onSubmit() {
+  var city = document.getElementById("city").value;
+  var country = document.getElementById("country").value;
+  var url = "http://api.aladhan.com/v1/timingsByCity?city=" + city + "&country=" + country
+
+  var request = new XMLHttpRequest()
+  request.open('GET', url, true);
+  
+}
