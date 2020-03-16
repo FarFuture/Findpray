@@ -1,8 +1,12 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
+
+function showSettings() {
+  win.loadFile('views/settings.html')
+}
 
 function createWindow () {
   // Create the browser window.
@@ -14,6 +18,28 @@ function createWindow () {
     }
   })
 
+
+  var menu = Menu.buildFromTemplate([
+      {
+          label: 'Menu',
+          submenu: [
+              {label:'Setting',
+                click() { 
+                   showSettings() 
+                },
+                accelerator: 'CmdOrCtrl+S'
+              },
+              {type:'separator'},
+              {label:'Exit', 
+                click() { 
+                    app.quit() 
+                },
+                accelerator: 'CmdOrCtrl+Shift+Q'
+              }
+          ]
+      }
+  ])
+  Menu.setApplicationMenu(menu);
   // and load the index.html of the app.
   win.loadFile('views/basic.html')
 

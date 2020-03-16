@@ -12,7 +12,11 @@
 		"appId": "com.pfs.findpray",
 		"mac": {
 			"category": "tool"
-		}
+		},
+		"win": {
+      			"target": "NSIS",
+      			"icon": "https://github.com/circutrider21/findpray/blob/master/build/icon.ico?raw=true"
+    		}
 	},
 	"repository": {
 		"type": "git",
