@@ -1,4 +1,4 @@
-$("#submit").click(function(){
+/*$("#submit").click(function(){
   var city = $("#city").text();
   var country = $("#country").text();
   var url = "http://api.aladhan.com/v1/timingsByCity?city=" + city + "&country=" + country + "&method=2";
@@ -16,7 +16,7 @@ $("#submit").click(function(){
     $("#isha").text("Isha: " +  isha);
     
   });
-});
+});*/
 
 function onSubmit() {
   var city = document.getElementById("city").value;
@@ -27,3 +27,19 @@ function onSubmit() {
   request.open('GET', url, true);
   
 }
+
+function getEle(text) {
+  var ele = document.getElementById(text);
+  return ele;
+}
+
+
+function al_ert(message, bad) {
+
+}
+
+var fajr = getEle("fajr");
+var duhur = getEle("dhuhr");
+var asr = getEle("asr");
+var maghrib = getEle("maghrib");
+var isha = getEle("isha");
