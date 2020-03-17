@@ -18,14 +18,25 @@
   });
 });*/
 
+var request = new XMLHttpRequest()
+request.onload = function() {
+  // Begin accessing JSON data here
+  var salat = JSON.parse(this.response)
+  var fajr = "Fajr: " + salat.data.timings.Fajr
+  var duhur = "Dhuhr: " + salat.data.timings.Duhur
+  var asr = "Asr: " + salat.data.timings.Asr
+  var maghirb =  "Maghrib: " + salat.data.timings.Maghirb
+  var isha = "Isha: " + salat.data.timings.Isha
+}
+
 function onSubmit() {
   var city = document.getElementById("city").value;
   var country = document.getElementById("country").value;
-  var url = "http://api.aladhan.com/v1/timingsByCity?city=" + city + "&country=" + country
-
-  var request = new XMLHttpRequest()
-  request.open('GET', url, true);
+  var url = "http://api.aladhan.com/v1/timingsByCity?city=" + city + "&country=" + country;
   
+  request.open('GET', url, true);
+  request.send();
+
 }
 
 function getEle(text) {
@@ -38,8 +49,8 @@ function al_ert(message, bad) {
 
 }
 
-var fajr = getEle("fajr");
-var duhur = getEle("dhuhr");
-var asr = getEle("asr");
-var maghrib = getEle("maghrib");
-var isha = getEle("isha");
+var fajr = getEle("fajr").innerText
+var duhur = getEle("dhuhr").innerText
+var asr = getEle("asr").innerText
+var maghrib = getEle("maghrib").innerText
+var isha = getEle("isha").innerText
